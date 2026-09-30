@@ -1,0 +1,11 @@
+[package]
+name = "astrolab-cli"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+astrolab-core = { path = "../astrolab-core" }
+
+[[bin]]
+name = "astrolab"
+path = "src/main.rs"
