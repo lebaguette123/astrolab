@@ -1,8 +1,10 @@
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Body{
-    pub name: &'static str,
-    pub mu: f64,
-    pub radius: f64,
+    name: &'static str,
+    /// Standard gravitational parameter (G × M), in m³/s² 
+    mu: f64,
+    /// Mean radius, in meters
+    radius: f64,
 }
 impl Body{
     pub const EARTH: Self = Self{ name: "Earth", mu: 3.986004418e14, radius: 6.371e6};
@@ -18,5 +20,15 @@ impl Body{
             }
         }
         None
+    }
+    
+    pub fn name(&self) -> &'static str{
+        self.name
+    }
+    pub fn mu(&self) -> f64{
+        self.mu
+    }
+    pub fn radius(&self) -> f64{
+        self.radius
     }
 }
